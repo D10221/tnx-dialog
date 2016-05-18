@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "outDir": "../built",
+    "experimentalDecorators": true,
+    "preserveConstEnums": true
+  },
+  "exclude": [
+    "../node_modules"
+  ],
+  "files":[
+    "./tests.ts"
+  ]
+}
