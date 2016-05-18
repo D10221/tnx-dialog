@@ -26,6 +26,7 @@
   "dependencies": {
     "angular": "^1.5.5",
     "lodash": "^4.12.0",
+    "material-design-lite-oob": "git+https://github.com/D10221/material-design-lite-oob.git",
     "rx": "^4.1.0",
     "tnx-core": "git+https://github.com/D10221/tnx-core.git"
   },
