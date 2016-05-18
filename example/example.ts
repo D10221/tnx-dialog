@@ -1,13 +1,8 @@
-class MainController{
+import '../src/tnx-dialog';
+import {MainController} from "./MainController";
 
-    static $inject =['$scope'];
-
-    message = 'Hellow';
-
-    constructor($scope) {
-
-    }
-}
-angular.module('app',[])
-    .controller('MainController', MainController);
+angular.module('app',[
+    'tnx.dialog'
+])
+.controller('MainController', MainController);
 

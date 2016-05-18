@@ -1,8 +1,9 @@
 import IScope = angular.IScope;
 import {IObservableController} from "tnx-core/dist/tnx-core";
+import {HTMLDialogElement} from "./HTMLDialogElement";
 
 export interface IDialogController extends Rx.Disposable {
-    
+    dialog:HTMLDialogElement ; 
 }
 
 export interface IDialogCommand {

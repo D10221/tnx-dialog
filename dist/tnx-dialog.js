@@ -1,4 +1,14 @@
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["tnx-dialog"] = factory();
+	else
+		root["tnx-dialog"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -42,6 +52,52 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var DialogCtrl_1 = __webpack_require__(1);
+	angular.module('tnx.dialog', [])
+	    .controller('DialogCtrl', DialogCtrl_1.DialogCtrl)
+	    .directive('tnxDialog', function () {
+	    return {
+	        restrict: 'E',
+	        controller: 'DialogCtrl',
+	        controllerAs: 'vm',
+	        templateUrl: function (element, attr) {
+	            return attr.templateUrl || "./";
+	        },
+	        scope: /*<DialogCtrlScope>*/ {
+	            /***
+	             * Sender as IObservableThing
+	             */
+	            owner: "=",
+	            /***
+	             * Dialog Options
+	             */
+	            header: "=",
+	            commands: '=',
+	            xid: '='
+	        },
+	        compile: function () {
+	            return {
+	                pre: function (scope, element, attr) {
+	                    var dialog = element.find('dialog')[0];
+	                    if (dialog) {
+	                        componentHandler.upgradeElements(dialog);
+	                    }
+	                    if (scope.vm) {
+	                        scope.vm.dialog = dialog;
+	                    }
+	                }
+	            };
+	        },
+	        transclude: true
+	    };
+	});
+
+
+/***/ },
+/* 1 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -102,7 +158,7 @@
 	        this.disposables.dispose();
 	    };
 	    DialogCtrl.prototype.raiseEvent = function (key, value) {
-	        //defined in constructor 
+	        //defined in constructor
 	    };
 	    DialogCtrl.prototype.mergeOptions = function (o) {
 	        var options = o;
@@ -124,46 +180,11 @@
 	    DialogCtrl.$inject = ['$scope'];
 	    return DialogCtrl;
 	}());
-	angular.module('tinyx.dialog', [])
-	    .controller('DialogCtrl', DialogCtrl)
-	    .directive('tnxDialog', function () {
-	    return {
-	        restrict: 'E',
-	        controller: 'DialogCtrl',
-	        controllerAs: 'vm',
-	        templateUrl: function (element, attr) {
-	            return attr.templateUrl || "./";
-	        },
-	        scope: /*<DialogCtrlScope>*/ {
-	            /***
-	             * Sender as IObservableThing
-	             */
-	            owner: "=",
-	            /***
-	             * Dialog Options
-	             */
-	            header: "=",
-	            commands: '=',
-	            xid: '='
-	        },
-	        compile: function () {
-	            return {
-	                pre: function (scope, element, attr) {
-	                    var dialog = element.find('dialog')[0];
-	                    if (dialog) {
-	                        componentHandler.upgradeElements(dialog);
-	                    }
-	                    if (scope.vm) {
-	                        scope.vm.dialog = dialog;
-	                    }
-	                }
-	            };
-	        },
-	        transclude: true
-	    };
-	});
+	exports.DialogCtrl = DialogCtrl;
 
 
 /***/ }
-/******/ ]);
+/******/ ])
+});
+;
 //# sourceMappingURL=tnx-dialog.js.map

@@ -4,12 +4,12 @@ import IScope = angular.IScope;
 import Subject = Rx.Subject;
 import Disposable = Rx.Disposable;
 import {HTMLDialogElement} from "./HTMLDialogElement";
-import {IDialogController, DialogCtrlScope} from "./interfaces";
-import {DialogOptions, IDialogCommand} from "./tnx-dialog";
+import {IDialogController, DialogCtrlScope, IDialogCommand, DialogOptions} from "./interfaces";
+
 
 declare var componentHandler : { upgradeElements : (x:any)=> void };
 
-class DialogCtrl implements IDialogController {
+export class DialogCtrl implements IDialogController {
 
     constructor($scope:DialogCtrlScope) {
 

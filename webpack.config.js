@@ -2,7 +2,10 @@ module.exports = {
     entry: "./src/tnx-dialog.ts",
     output: {
         path: __dirname,
-        filename: "dist/tnx-dialog.js"
+        filename: "dist/tnx-dialog.js",
+        library: "tnx-dialog",
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     resolve: {
         extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']

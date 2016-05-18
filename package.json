@@ -19,7 +19,9 @@
     "clean": "rm built -rf",
     "build": "tsc -p .",
     "bundle": "webpack",
-    "bundle-tests": "webpack --config test/webpack.config.js"
+    "bundle-tests": "webpack --config test/webpack.config.js",
+    "build-example": "tsc -p example/.",
+    "bundle-example": "webpack --config example/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
